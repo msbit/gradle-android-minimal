@@ -1,0 +1,11 @@
+plugins {
+  id 'com.android.application'
+}
+
+android {
+  compileSdkVersion 30
+
+  defaultConfig {
+    applicationId 'au.com.msbit.gradle_android_minimal'
+  }
+}
