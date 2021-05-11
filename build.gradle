@@ -1,0 +1,10 @@
+buildscript {
+  repositories {
+    google()
+    mavenCentral()
+  }
+
+  dependencies {
+    classpath group: 'com.android.tools.build', name: 'gradle', version: '4.2.0'
+  }
+}
