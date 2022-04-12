@@ -11,8 +11,15 @@ public class MainActivity extends Activity {
   int _count = 0;
 
   @Override
-  protected void onCreate(Bundle saved) {
-    super.onCreate(saved);
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    if (savedInstanceState != null) {
+      int savedCount = savedInstanceState.getInt("count", -1);
+      if (savedCount != -1) {
+        _count = savedCount;
+      }
+    }
 
     var view = new TextView(this);
 
@@ -22,6 +29,11 @@ public class MainActivity extends Activity {
     view.setText(count());
 
     setContentView(view);
+  }
+
+  @Override
+  protected void onSaveInstanceState(Bundle outState) {
+    outState.putInt("count", _count);
   }
 
   String count() {
